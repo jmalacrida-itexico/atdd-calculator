@@ -1,28 +1,16 @@
 package com.itexico.calculator.acceptance;
 
-import com.itexico.calculator.CalculatorApplication;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
 
 import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@ContextConfiguration
-@SpringBootTest(classes = CalculatorApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@DirtiesContext
-public class BasicStepdefs {
-
-    @Autowired
-    private WebApplicationContext webApp;
+public class BasicStepDefinitions extends AcceptanceTest {
 
     private ResultActions callUrl;
 
