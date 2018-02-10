@@ -10,6 +10,7 @@ buildscript {
     }
 }
 
+apply plugin: 'groovy'
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
@@ -24,7 +25,7 @@ repositories {
 }
 
 dependencies {
-
+    compile 'org.codehaus.groovy:groovy-all:2.4.1'
     compile 'org.springframework.boot:spring-boot-starter-web'
 
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
@@ -32,7 +33,10 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 
-    testCompile 'io.cucumber:cucumber-java:2.3.1'
+    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+    testCompile 'org.spockframework:spock-spring:1.0-groovy-2.4'
+
+    testCompile 'io.cucumber:cucumber-java8:2.3.1'
     testCompile 'io.cucumber:cucumber-spring:2.3.1'
     testCompile 'io.cucumber:cucumber-junit:2.3.1'
 }
